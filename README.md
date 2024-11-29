@@ -35,6 +35,20 @@ typically the most-recent non-SNAPSHOT version
 implementation 'com.github.tommyettinger:replicantbatch:0.0.1:sources'
 ```
 
+You may also need to change any dependency on a third-party 1.12.1 backend for GWT to
+the official 1.13.0 backend:
+
+```groovy
+//// Remove or comment out these lines, if you have them:
+//  implementation "com.github.tommyettinger:gdx-backend-gwt:1.1210.1"
+//  implementation "com.github.tommyettinger:gdx-backend-gwt:1.1210.1:sources"
+//// Change the above to this:
+  implementation "com.badlogicgames.gdx:gdx-backend-gwt:1.13.0"
+  implementation "com.badlogicgames.gdx:gdx-backend-gwt:1.13.0:sources"
+//// If you already depend on the above official backend, version 1.13.0 ,
+//// then you don't need to change anything.
+```
+
 You will also need this GWT inherits line in your `GdxDefinition.gwt.xml` file:
 
 ```xml
